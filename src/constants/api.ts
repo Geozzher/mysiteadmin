@@ -15,7 +15,7 @@ export const API_TAG_MODIFY = '/api/article/setTag.json';
 /**
  * 类型管理
  */
-export const API_TYPE_QUERY = '/api/article/queryType.json';
+export const API_TYPE_QUERY = '/api/article/queryTypeForBackend.json';
 export const API_TYPE_ADD = '/api/article/addType.json';
 export const API_TYPE_MODIFY = '/api/article/setType.json';
 

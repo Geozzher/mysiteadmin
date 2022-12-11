@@ -11,16 +11,16 @@ export const routes = [
   {
     name: '标签管理',
     path: '/tagmanage',
-    component: './Access',
+    component: './Tags',
   },
   {
     name: '分类管理',
     path: '/typemanage',
-    component: './Table',
+    component: './Types',
   },
   {
     name: '文章管理',
     path: '/articlemanage',
-    component: './Table',
+    component: './Types',
   },
 ];

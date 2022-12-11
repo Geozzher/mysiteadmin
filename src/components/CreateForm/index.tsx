@@ -27,7 +27,7 @@ const CreateForm: React.FC<Props> = (props) => {
 
   useEffect(() => {
     form.setFieldsValue({ color: '#000000', is_show: false, ...initialState });
-  }, [initialState]);
+  }, [initialState, visible]);
 
   return (
     <Modal

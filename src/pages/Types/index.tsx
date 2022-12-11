@@ -1,4 +1,4 @@
-import { addTag, getTag, setTag } from '@/services/api/tag';
+import { addType, getType, setType } from '@/services/api/type';
 import { PageContainer } from '@ant-design/pro-components';
 import { useRequest } from '@umijs/max';
 import { Table, Button } from 'antd';
@@ -13,8 +13,8 @@ const mtype = {
   EDIT: 'edit',
 };
 const mtitle: Record<string, string> = {
-  [mtype.CREATE]: '新建标签',
-  [mtype.EDIT]: '编辑标签',
+  [mtype.CREATE]: '新建分类',
+  [mtype.EDIT]: '编辑分类',
 };
 
 const AccessPage: React.FC = () => {
@@ -23,10 +23,8 @@ const AccessPage: React.FC = () => {
   const [modalType, setModalType] = useState(mtype.CREATE);
   const [modalTitle, setModalTitle] = useState(mtitle[mtype.CREATE]);
   const pageInfoRef = useRef({ current: 1, pageSize: 10 });
-  // const [pageInfo, setUsePageInfo] = useState({ current: 1, pageSize: 10 });
-  const { data, run } = useRequest(() => getTag(pageInfoRef.current), {
+  const { data, run } = useRequest(() => getType(pageInfoRef.current), {
     manual: true,
-    // refreshDeps: [pageInfoRef.current],
   });
 
   const handleCreateClick = () => {
@@ -46,9 +44,9 @@ const AccessPage: React.FC = () => {
   const handleOnModalConfrirm = async (value: any) => {
     let result = null;
     if (modalType === mtype.CREATE) {
-      result = await addTag(value);
+      result = await addType(value);
     } else {
-      result = await setTag(value);
+      result = await setType(value);
     }
     setShowCreateModal(false);
     if (result.code !== 0) {
@@ -78,7 +76,7 @@ const AccessPage: React.FC = () => {
   }, []);
 
   return (
-    <PageContainer ghost header={{ title: '标签管理' }}>
+    <PageContainer ghost header={{ title: '分类管理' }}>
       <div className="table-wrapper">
         <Table
           dataSource={data?.list || []}
@@ -88,13 +86,11 @@ const AccessPage: React.FC = () => {
           pagination={{
             current: data?.pageInfo.current || 1,
             pageSize: data?.pageInfo.pageSize || 10,
-            // hideOnSinglePage: true,
             showSizeChanger: true,
             showTotal: () => `共${data?.pageInfo.total}条数据`,
             total: data?.pageInfo.total,
             onChange(current, pageSize) {
               pageInfoRef.current = { current, pageSize };
-
               run();
             },
           }}
