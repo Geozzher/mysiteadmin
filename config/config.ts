@@ -15,7 +15,7 @@ export default defineConfig({
   npmClient: 'yarn',
   proxy: {
     '/api': {
-      target: 'http://localhost:3003',
+      target: 'http://localhost:3004',
       changeOrigin: true,
       pathRewrite: {
         '^/api': '',
