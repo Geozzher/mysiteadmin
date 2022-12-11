@@ -1,8 +1,11 @@
 import { API_NAV_ADD, API_NAV_LIST, API_NAV_MODIFY } from '@/constants';
 import { get, post } from '@/utils/request';
-
-export const getNavList = () => {
-  return get(API_NAV_LIST);
+interface ITagQueryParams {
+  current: number;
+  pageSize: number;
+}
+export const getNavList = (params: ITagQueryParams) => {
+  return get(API_NAV_LIST, params);
 };
 
 interface IAddNavMenuParams {

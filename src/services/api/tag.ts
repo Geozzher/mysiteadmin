@@ -1,12 +1,12 @@
 import { API_TAG_QUERY, API_TAG_ADD, API_TAG_MODIFY } from '@/constants';
-import { post } from '@/utils/request';
+import { get, post } from '@/utils/request';
 
 interface ITagQueryParams {
   current: number;
   pageSize: number;
 }
 export const getTag = (params: ITagQueryParams) => {
-  return post(API_TAG_QUERY, params);
+  return get(API_TAG_QUERY, params);
 };
 
 interface IAddTagParams {

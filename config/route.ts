@@ -6,7 +6,7 @@ export const routes = [
   {
     name: '菜单管理',
     path: '/navmanage',
-    component: './Home',
+    component: './NavMenu',
   },
   {
     name: '标签管理',

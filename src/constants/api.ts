@@ -1,7 +1,7 @@
 /**
  * 导航菜单
  */
-export const API_NAV_LIST = '/api/nav/query.json';
+export const API_NAV_LIST = '/api/nav/queryForBackend.json';
 export const API_NAV_ADD = '/api/nav/addMenu.json';
 export const API_NAV_MODIFY = '/api/nav/modifyMenu.json';
 

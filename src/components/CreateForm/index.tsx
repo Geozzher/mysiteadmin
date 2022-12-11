@@ -7,9 +7,10 @@ interface Props {
   onConfirm: (e: any) => void;
   onCancel: () => void;
   initialState?: any;
+  type?: string;
 }
 const CreateForm: React.FC<Props> = (props) => {
-  const { visible, title, onConfirm, onCancel, initialState } = props;
+  const { visible, title, onConfirm, onCancel, type, initialState } = props;
   const [form] = Form.useForm();
 
   const handleOk = () => {
@@ -59,20 +60,27 @@ const CreateForm: React.FC<Props> = (props) => {
         onFinish={handleOk}
         form={form}
       >
-        <Form.Item label="标签名" name="label" rules={[{ required: true }]}>
+        <Form.Item label="显示名称" name="label" rules={[{ required: true }]}>
           <Input></Input>
         </Form.Item>
-        <Form.Item label="标签英文名" name="name" rules={[{ required: true }]}>
+        <Form.Item label="英文名" name="name" rules={[{ required: true }]}>
           <Input></Input>
         </Form.Item>
-        <Form.Item
-          label="标签颜色"
-          name="color"
-          rules={[{ required: true }]}
-          wrapperCol={{ span: 6, offset: 2 }}
-        >
-          <Input type="color" className="color-input"></Input>
-        </Form.Item>
+        {type ? (
+          <Form.Item label="路径" name="path" rules={[{ required: true }]}>
+            <Input></Input>
+          </Form.Item>
+        ) : (
+          <Form.Item
+            label="显示颜色"
+            name="color"
+            rules={[{ required: true }]}
+            wrapperCol={{ span: 6, offset: 2 }}
+          >
+            <Input type="color" className="color-input"></Input>
+          </Form.Item>
+        )}
+
         <Form.Item
           label="是否显示"
           name="is_show"

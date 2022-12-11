@@ -1,12 +1,12 @@
 import { API_TYPE_QUERY, API_TYPE_ADD, API_TYPE_MODIFY } from '@/constants';
-import { post } from '@/utils/request';
+import { get, post } from '@/utils/request';
 
 interface ITypeQueryParams {
   current: number;
   pageSize: number;
 }
 export const getType = (params: ITypeQueryParams) => {
-  return post(API_TYPE_QUERY, params);
+  return get(API_TYPE_QUERY, params);
 };
 interface IAddTypeParams {
   name: string;
