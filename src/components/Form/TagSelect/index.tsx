@@ -29,7 +29,6 @@ const TagSelect: React.FC<ITagSelectProps> = () => {
         showArrow
         mode="tags"
         tagRender={tagRender}
-        defaultValue={'qqq'}
         style={{ width: '100%' }}
         showSearch={false}
         labelInValue={true}

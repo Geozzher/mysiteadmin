@@ -9,7 +9,7 @@ import { history } from '@umijs/max';
 import { ARTICLE_ADD, ARTICLE_EDIT } from '@/constants';
 
 const AccessPage: React.FC = () => {
-  const pageInfoRef = useRef({ current: 1, pageSize: 3 });
+  const pageInfoRef = useRef({ current: 1, pageSize: 10 });
   const { data, run } = useRequest(() => getArticleList(pageInfoRef.current), {
     manual: true,
   });
