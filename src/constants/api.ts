@@ -25,3 +25,11 @@ export const API_TYPE_MODIFY = '/api/article/setType.json';
 export const API_RECOMMEND_QUERY = '/api/recommend/query.json';
 export const API_RECOMMEND_ADD = '/api/recommend/add.json';
 export const API_RECOMMEND_MODIFY = '/api/recommend/modify.json';
+
+/**
+ * 文章管理
+ */
+export const API_ARTICLE_LIST_QUERY = '/api/article/getArticleListForBackend.json';
+export const API_ARTICLE_QUERY_ONE = '/api/article/queryOne.json';
+export const API_ARTICLE_ADD = '/api/article/addOne.json';
+export const API_ARTICLE_MODIFY = '/api/article/modifyArticle.json';

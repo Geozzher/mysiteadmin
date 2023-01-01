@@ -5,7 +5,7 @@ interface ITypeQueryParams {
   current: number;
   pageSize: number;
 }
-export const getType = (params: ITypeQueryParams) => {
+export const getType = (params?: ITypeQueryParams) => {
   return get(API_TYPE_QUERY, params);
 };
 interface IAddTypeParams {

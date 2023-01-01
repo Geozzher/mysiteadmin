@@ -1,0 +1,12 @@
+export const BASE_ROUTE = '/';
+
+export const NAV_MANAGE = '/nav';
+
+export const TAG_MANAGE = '/tag';
+
+export const TYPE_MANAGE = '/type';
+
+export const ARTICLE_MANAGE = '/article';
+export const ARTICLE_LIST = '/article/list';
+export const ARTICLE_ADD = '/article/add';
+export const ARTICLE_EDIT = '/article/edit';

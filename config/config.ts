@@ -10,7 +10,7 @@ export default defineConfig({
   layout: {
     title: '后台管理系统',
   },
-  mfsu: { esbuild: true },
+  fastRefresh: true,
   routes: [...routes],
   npmClient: 'yarn',
   proxy: {

@@ -76,7 +76,7 @@ const AccessPage: React.FC = () => {
   }, []);
 
   return (
-    <PageContainer ghost header={{ title: '标签管理' }}>
+    <PageContainer ghost header={{ title: '菜单管理' }}>
       <div className="table-wrapper">
         <Table
           dataSource={data?.list || []}

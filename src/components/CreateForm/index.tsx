@@ -41,24 +41,19 @@ const CreateForm: React.FC<Props> = (props) => {
         <Button key="back" onClick={handleCancel}>
           取消
         </Button>,
-        <Button
-          key="submit"
-          type="primary"
-          onClick={handleOk}
-          htmlType="submit"
-        >
+        <Button key="submit" type="primary" onClick={handleOk} htmlType="submit">
           确定
         </Button>,
       ]}
     >
       <Form
+        form={form}
         labelCol={{ span: 8 }}
         wrapperCol={{ span: 12, offset: 2 }}
         preserve={false}
         layout="horizontal"
         component={false}
         onFinish={handleOk}
-        form={form}
       >
         <Form.Item label="显示名称" name="label" rules={[{ required: true }]}>
           <Input></Input>
@@ -71,22 +66,12 @@ const CreateForm: React.FC<Props> = (props) => {
             <Input></Input>
           </Form.Item>
         ) : (
-          <Form.Item
-            label="显示颜色"
-            name="color"
-            rules={[{ required: true }]}
-            wrapperCol={{ span: 6, offset: 2 }}
-          >
+          <Form.Item label="显示颜色" name="color" rules={[{ required: true }]} wrapperCol={{ span: 6, offset: 2 }}>
             <Input type="color" className="color-input"></Input>
           </Form.Item>
         )}
 
-        <Form.Item
-          label="是否显示"
-          name="is_show"
-          valuePropName="checked"
-          rules={[{ required: true }]}
-        >
+        <Form.Item label="是否显示" name="is_show" valuePropName="checked" rules={[{ required: true }]}>
           <Switch />
         </Form.Item>
       </Form>
