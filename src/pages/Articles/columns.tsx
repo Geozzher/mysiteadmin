@@ -1,3 +1,5 @@
+import { ARTICLE_PREVIEW } from '@/constants';
+import { history } from '@umijs/max';
 import { Space, Tag } from 'antd';
 export const columns = (onEditClick: (record: any) => void) => [
   {
@@ -63,6 +65,13 @@ export const columns = (onEditClick: (record: any) => void) => [
     render(_: any, record: any) {
       return (
         <Space size="middle" key={record.id}>
+          <a
+            onClick={() => {
+              history.push(`${ARTICLE_PREVIEW}/${record.id}`);
+            }}
+          >
+            预览
+          </a>
           <a
             onClick={() => {
               onEditClick(record);

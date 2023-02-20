@@ -1,4 +1,4 @@
-import { ARTICLE_ADD, ARTICLE_EDIT, ARTICLE_LIST } from '@/constants';
+import { ARTICLE_ADD, ARTICLE_LIST } from '@/constants';
 import { PageContainer } from '@ant-design/pro-components';
 import { history } from '@umijs/max';
 import { Button, Form, Input, Switch } from 'antd';
@@ -6,7 +6,7 @@ import Editor from '@/components/Form/Editor';
 import TagSelect from '@/components/Form/TagSelect';
 import TypeSelect from '@/components/Form/TypeSelect';
 import './index.less';
-import { useMatch } from '@umijs/max';
+import { useParams } from '@umijs/max';
 import { addArticle, modifyArticle, queryArticle } from '@/services/api';
 import BraftEditor from 'braft-editor';
 import { useEffect } from 'react';
@@ -37,8 +37,7 @@ const ArticleInfo: React.FC = () => {
   // 新建 || 修改
   const mode = history.location.pathname === ARTICLE_ADD ? MODE.ADD : MODE.EDIT;
   const title = mode === MODE.ADD ? PAGE_CONTAINER_TITLE[MODE.ADD] : PAGE_CONTAINER_TITLE[MODE.EDIT];
-  const match = useMatch(`${ARTICLE_EDIT}/:articleId`);
-  const articleId = match?.params.articleId;
+  const { articleId } = useParams();
   const [form] = Form.useForm();
   let submitAction = addArticle;
 
@@ -91,7 +90,7 @@ const ArticleInfo: React.FC = () => {
 
         <TypeSelect form={form}></TypeSelect>
         <TagSelect form={form}></TagSelect>
-        <Form.Item name="is_show" label="是否显示" rules={[{ required: true }]}>
+        <Form.Item name="is_show" label="是否显示" rules={[{ required: true }]} valuePropName="checked">
           <Switch />
         </Form.Item>
         <Editor form={form} />

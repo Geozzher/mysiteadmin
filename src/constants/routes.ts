@@ -10,3 +10,4 @@ export const ARTICLE_MANAGE = '/article';
 export const ARTICLE_LIST = '/article/list';
 export const ARTICLE_ADD = '/article/add';
 export const ARTICLE_EDIT = '/article/edit';
+export const ARTICLE_PREVIEW = '/article/preview';

@@ -2,14 +2,20 @@ import 'braft-editor/dist/index.css';
 import React from 'react';
 import BraftEditor from 'braft-editor';
 import { Form, Input } from 'antd';
+import { history } from '@umijs/max';
+import { ARTICLE_PREVIEW } from '@/constants';
 interface IEditorProps {
   form: any;
 }
 
-const Editor: React.FC<IEditorProps> = () => {
+const Editor: React.FC<IEditorProps> = ({ form }) => {
   const handleOnEditorChange = () => {
     console.log('=======handleOnEditorChange');
   };
+
+  // const preview = () => {
+  //   history.push(ARTICLE_PREVIEW, { previewHTML: form.getFieldValue('content').toHTML() });
+  // };
 
   return (
     <>

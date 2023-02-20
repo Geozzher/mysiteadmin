@@ -1,0 +1,35 @@
+.article-content {
+  overflow-x: hidden;
+  box-sizing: border-box;
+  min-height: calc(100vh - 240px);
+  margin: 0 auto;
+  padding: @--size-24;
+  background-color: #fff;
+  border-right: @--border-gray;
+  border-left: @--border-gray;
+
+  img,
+  audio,
+  video {
+    max-width: 100%;
+    height: auto;
+  }
+
+  p {
+    white-space: pre-wrap;
+    min-height: 1em;
+  }
+
+  pre {
+    padding: 15px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+  }
+
+  blockquote {
+    margin: 0;
+    padding: 15px;
+    background-color: #f1f1f1;
+    border-left: 3px solid #d1d1d1;
+  }
+}
