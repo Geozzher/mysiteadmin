@@ -33,3 +33,11 @@ export const API_ARTICLE_LIST_QUERY = '/api/article/getArticleListForBackend.jso
 export const API_ARTICLE_QUERY_ONE = '/api/article/queryOneForBackend.json';
 export const API_ARTICLE_ADD = '/api/article/addOne.json';
 export const API_ARTICLE_MODIFY = '/api/article/modifyArticle.json';
+
+/**
+ * 用户管理
+ */
+export const API_USER_LOGIN = '/api/user/login.json';
+export const API_USER_SESSIONCHECK = '/api/user/sessionCheck.json';
+// 路由权限校验
+export const API_USER_ROUTE_VERIFY = '/api/user/verify.json';

@@ -1,5 +1,5 @@
 export const BASE_ROUTE = '/';
-
+export const USER_LOGIN = '/login';
 export const NAV_MANAGE = '/nav';
 
 export const TAG_MANAGE = '/tag';

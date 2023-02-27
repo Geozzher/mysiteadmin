@@ -1,5 +1,6 @@
 export const routes = [
   { path: '/', redirect: '/nav' },
+  { path: '/login', component: 'Login', layout: false },
   { name: '菜单管理', path: '/nav', component: 'NavMenu' },
   { name: '标签管理', path: '/tag', component: 'Tags' },
   { name: '分类管理', path: '/type', component: 'Types' },

@@ -16,3 +16,16 @@ export const post = (url: string, body?: Record<string, any>, options?: Record<s
     ...(options || {}),
   });
 };
+
+interface IResponse {
+  code: number;
+  stat: string;
+  msg: string;
+  data: any;
+}
+export const isRequestSuccess = (response: IResponse): boolean => {
+  if (response && response.stat === 'ok') {
+    return true;
+  }
+  return false;
+};
